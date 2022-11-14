@@ -369,10 +369,6 @@ body.light hr.separator {
 }
 
 .button-icon {
-  position: absolute;
-  right: -1px;
-  top: -1px;
-  bottom: 0;
   width: 55px;
   height: 55px;
   display: flex;

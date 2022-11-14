@@ -136,17 +136,30 @@
                 </div>
             </div>
             <!-- Left Side Starts -->
-            <div class="col-12 col-lg-4 text-center">
-                <ul class="social list-unstyled pt-1">
-                    <li class="facebook"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li class="twitter"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="youtube"><a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
-                    </li>
-                    <li class="dribbble"><a title="Dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                </ul>
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 text-center">
+                <div class="row">
+                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
+                        <a href="https://facebook.com/jionsix.hacknh">
+                            <span class="button-icon facebook fa fa-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
+                        <a href="https://twitter.com/j6dr23n">
+                            <span class="button-icon twitter fa fa-twitter"></span>
+                        </a>
+                    </div>
+                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
+                        <a href="mailto:j6dr23n@gmail.com">
+                            <span class="button-icon google-plus fa fa-google-plus"></span>
+                        </a>
+                    </div>
+                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
+                        <a href="tel:+959268201071">
+                            <span class="button-icon phone fa fa-phone"></span>
+                        </a>
+                    </div>
+
+                </div>
             </div>
             <!-- Left Side Ends -->
             <hr class="separator">
@@ -241,10 +254,6 @@
             <hr class="separator">
         </div>
     </section>
-    {{-- <a class="button" href="about.html">
-        <span class="button-text">more about me</span>
-        <span class="button-icon fa fa-arrow-right"></span>
-    </a> --}}
     <!-- Main Content Ends -->
 
     <!-- Template JS Files -->
