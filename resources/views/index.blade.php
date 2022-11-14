@@ -97,7 +97,6 @@
                         that improves the lives of those around me.</p>
                 </div>
             </div>
-            <hr class="separator">
             <div class="col-12 col-lg-5 col-xl-6">
                 <div class="row">
                     <div class="col-12">
@@ -136,6 +135,20 @@
                     </div>
                 </div>
             </div>
+            <!-- Left Side Starts -->
+            <div class="col-12 col-lg-4 text-center">
+                <ul class="social list-unstyled pt-1">
+                    <li class="facebook"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="twitter"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="youtube"><a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
+                    </li>
+                    <li class="dribbble"><a title="Dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Left Side Ends -->
             <hr class="separator">
             <!-- Skills Starts -->
             <div class="row">
@@ -226,20 +239,6 @@
                 </div>
             </div>
             <hr class="separator">
-            <!-- Left Side Starts -->
-            <div class="col-12 col-lg-4 text-center">
-                <ul class="social list-unstyled pt-1 mb-5">
-                    <li class="facebook"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li class="twitter"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="youtube"><a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
-                    </li>
-                    <li class="dribbble"><a title="Dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Left Side Ends -->
         </div>
     </section>
     {{-- <a class="button" href="about.html">
