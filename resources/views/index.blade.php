@@ -28,7 +28,7 @@
 <body class="home about contact">
     <!-- Header Starts -->
     <header class="header" id="navbar-collapse-toggle">
-        <!-- Fixed Navigation Starts -->
+        {{-- <!-- Fixed Navigation Starts -->
         <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
             <li class="icon-box active">
                 <i class="fa fa-home"></i>
@@ -61,7 +61,7 @@
                 </a>
             </li>
         </ul>
-        <!-- Fixed Navigation Ends -->
+        <!-- Fixed Navigation Ends --> --}}
         <!-- Mobile Menu Starts -->
         <nav role="navigation" class="d-block d-lg-none">
             <div id="menuToggle">
@@ -82,89 +82,104 @@
     </header>
     <!-- Header Ends -->
     <!-- Main Content Starts -->
-    <section
-        class="container-fluid main-container container-home p-0 revealator-slideup revealator-once revealator-delay1">
-        <div class="color-block d-none d-lg-block"></div>
-        <div class="row home-details-container align-items-center">
-            <div class="col-lg-4 bg position-fixed d-none d-lg-block"></div>
-            <div class="col-12 col-lg-8 offset-lg-4 home-details text-center text-sm-center text-lg-left">
-                <div>
-                    <img src="img/img-mobile.jpg" class="img-fluid main-img-mobile d-sm-block d-lg-none"
-                        alt="my picture" />
-                    <h1 class="text-uppercase poppins-font">I'm steve milner.<span>web designer</span></h1>
-                    <p class="open-sans-font">I'm a Tunisian based web designer & front‑end developer focused on
-                        crafting clean & user‑friendly experiences, I am passionate about building excellent software
-                        that improves the lives of those around me.</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg-5 col-xl-6">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 class="text-uppercase custom-title mb-0 ft-wt-600 text-center">personal infos</h3>
-                    </div>
-                    <div class="col-6">
-                        <ul class="about-list list-unstyled open-sans-font">
-                            <li> <span class="title">full name :</span> <span
-                                    class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Steve</span>
-                            </li>
-                            <li> <span class="title">Age :</span> <span
-                                    class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">27 Years</span>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="col-6">
-                        <ul class="about-list list-unstyled open-sans-font">
-                            <li> <span class="title">Email :</span> <span
-                                    class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">you@mail.com</span>
-                            </li>
-                            <li> <span class="title">phone :</span> <span
-                                    class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">+21621184010</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12">
-                        <ul class="about-list list-unstyled open-sans-font">
-                            <li> <span class="title">Address</span> <span
-                                    class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Lorem ipsum
-                                    dolor sit, amet consectetur adipisicing elit. Natus, saepe? Provident, qui magni
-                                    reiciendis sapiente, inventore quaerat quasi ipsam quam veniam eius suscipit
-                                    obcaecati recusandae voluptates repellendus? Beatae</span>
-                            </li>
-                        </ul>
+    <section class="main-content revealator-slideup revealator-once revealator-delay1">
+        <div class="container">
+            <div class="row home-details-container align-items-center">
+                <div class="col-lg-4 bg d-none d-lg-block"></div>
+                <div class="col-12 col-lg-8 home-details text-center text-sm-center text-lg-left">
+                    <div>
+                        <img src="img/img-mobile.jpg" class="img-fluid main-img-mobile d-sm-block d-lg-none" alt="my picture">
+                        <h1 class="text-uppercase poppins-font">I'm steve milner.<span>web designer</span></h1>
+                        <p class="open-sans-font">I'm a Tunisian based web designer & front‑end developer focused on
+                            crafting clean & user‑friendly experiences, I am passionate about building excellent
+                            software
+                            that improves the lives of those around me.</p>
                     </div>
                 </div>
             </div>
-            <!-- Left Side Starts -->
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12 text-center">
-                <div class="row">
-                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
-                        <a href="https://facebook.com/jionsix.hacknh">
-                            <span class="button-icon facebook fa fa-facebook"></span>
-                        </a>
-                    </div>
-                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
-                        <a href="https://twitter.com/j6dr23n">
-                            <span class="button-icon twitter fa fa-twitter"></span>
-                        </a>
-                    </div>
-                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
-                        <a href="mailto:j6dr23n@gmail.com">
-                            <span class="button-icon google-plus fa fa-google-plus"></span>
-                        </a>
-                    </div>
-                    <div class="col-3 col-lg-6 col-md-6 col-sm-6 mb-2">
-                        <a href="tel:+959268201071">
-                            <span class="button-icon phone fa fa-phone"></span>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Left Side Ends -->
             <hr class="separator">
-            <!-- Skills Starts -->
             <div class="row">
+                <div class="col-12 col-lg-12 col-xl-12 ">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="text-uppercase custom-title mb-0 ft-wt-600 text-center">personal infos</h3>
+                        </div>
+                        <div class="col-6">
+                            <ul class="about-list list-unstyled open-sans-font">
+                                <li> <span class="title">full name :</span> <span
+                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Steve</span>
+                                </li>
+                                <li> <span class="title">Age :</span> <span
+                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">27
+                                        Years</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="about-list list-unstyled open-sans-font">
+                                <li> <span class="title">Email :</span> <span
+                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">you@mail.com</span>
+                                </li>
+                                <li> <span class="title">phone :</span> <span
+                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">+21621184010</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <ul class="about-list list-unstyled open-sans-font">
+                                <li> <span class="title">Address</span> <span
+                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Lorem ipsum
+                                        dolor sit, amet consectetur adipisicing elit. Natus, saepe? Provident, qui magni
+                                        reiciendis sapiente, inventore quaerat quasi ipsam quam veniam eius suscipit
+                                        obcaecati recusandae voluptates repellendus? Beatae</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Left Side Starts -->
+                        <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
+                                    <a href="https://facebook.com/jionsix.hacknh">
+                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/5968/5968764.png)"></span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
+                                    <a href="https://twitter.com/j6dr23n">
+                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/2504/2504839.png)"></span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
+                                    <a href="mailto:j6dr23n@gmail.com">
+                                        <span class="button-icon"
+                                        style="background-image: url(https://cdn-icons-png.flaticon.com/512/732/732200.png)"></span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
+                                    <a href="tel:+959268201071">
+                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/724/724664.png)"></span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
+                                    <a href="https://facebook.com/jionsix.hacknh">
+                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/5968/5968841.png)"></span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
+                                    <a href="https://facebook.com/jionsix.hacknh">
+                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/3955/3955024.png)"></span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Left Side Ends -->
+                    </div>
+                </div>
+            </div>
+            <hr class="separator">
+            <div class="row">
+                <!-- Skills Starts -->
                 <div class="col-12">
                     <h3
                         class="text-uppercase text-center pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">
@@ -251,7 +266,7 @@
                     <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">react</h6>
                 </div>
             </div>
-            <hr class="separator">
+        </div>
         </div>
     </section>
     <!-- Main Content Ends -->

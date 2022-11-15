@@ -34,6 +34,19 @@ body.light .header ul.icon-menu li.icon-box.active, body.light  .header ul.icon-
 .title-section hr,
 .portfolio .slideshow .carousel-indicators li.active,
 .button:before,
+.button-icon{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.preloader .loader{
+	background-color: #4169e1;
+}
+
+.button-icon{
+	margin-left: 25%;
+}
 .button-icon.facebook{
 	background-color: #4267B2;
 }
