@@ -33,7 +33,7 @@
             <li class="icon-box active">
                 <i class="fa fa-home"></i>
                 <a href="index.html">
-                    <h2>Home</h2>
+                    <h2>Dashboard</h2>
                 </a>
             </li>
             <li class="icon-box">
@@ -70,7 +70,7 @@
                 <span></span>
                 <span></span>
                 <ul class="list-unstyled" id="menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
+                    <li class="active"><a href="index.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
                     <li><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
                     <li><a href="portfolio.html"><i class="fa fa-folder-open"></i><span>Portfolio</span></a></li>
                     <li><a href="contact.html"><i class="fa fa-envelope-open"></i><span>Contact</span></a></li>
@@ -88,7 +88,8 @@
                 <div class="col-lg-4 bg d-none d-lg-block"></div>
                 <div class="col-12 col-lg-8 home-details text-center text-sm-center text-lg-left">
                     <div>
-                        <img src="img/img-mobile.jpg" class="img-fluid main-img-mobile d-sm-block d-lg-none" alt="my picture">
+                        <img src="img/img-mobile.jpg" class="img-fluid main-img-mobile d-sm-block d-lg-none"
+                            alt="my picture">
                         <h1 class="text-uppercase poppins-font">I'm steve milner.<span>web designer</span></h1>
                         <p class="open-sans-font">I'm a Tunisian based web designer & front‑end developer focused on
                             crafting clean & user‑friendly experiences, I am passionate about building excellent
@@ -141,33 +142,38 @@
                             <div class="row">
                                 <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
                                     <a href="https://facebook.com/jionsix.hacknh">
-                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/5968/5968764.png)"></span>
+                                        <span class="button-icon"
+                                            style="background-image: url(https://cdn-icons-png.flaticon.com/512/5968/5968764.png)"></span>
                                     </a>
                                 </div>
                                 <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
                                     <a href="https://twitter.com/j6dr23n">
-                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/2504/2504839.png)"></span>
+                                        <span class="button-icon"
+                                            style="background-image: url(https://cdn-icons-png.flaticon.com/512/2504/2504839.png)"></span>
                                     </a>
                                 </div>
                                 <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
                                     <a href="mailto:j6dr23n@gmail.com">
                                         <span class="button-icon"
-                                        style="background-image: url(https://cdn-icons-png.flaticon.com/512/732/732200.png)"></span>
+                                            style="background-image: url(https://cdn-icons-png.flaticon.com/512/732/732200.png)"></span>
                                     </a>
                                 </div>
                                 <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
                                     <a href="tel:+959268201071">
-                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/724/724664.png)"></span>
+                                        <span class="button-icon"
+                                            style="background-image: url(https://cdn-icons-png.flaticon.com/512/724/724664.png)"></span>
                                     </a>
                                 </div>
                                 <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
                                     <a href="https://facebook.com/jionsix.hacknh">
-                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/5968/5968841.png)"></span>
+                                        <span class="button-icon"
+                                            style="background-image: url(https://cdn-icons-png.flaticon.com/512/5968/5968841.png)"></span>
                                     </a>
                                 </div>
                                 <div class="col-4 col-lg-2 col-md-3 col-sm-3 mb-2">
                                     <a href="https://facebook.com/jionsix.hacknh">
-                                        <span class="button-icon" style="background-image: url(https://cdn-icons-png.flaticon.com/512/3955/3955024.png)"></span>
+                                        <span class="button-icon"
+                                            style="background-image: url(https://cdn-icons-png.flaticon.com/512/3955/3955024.png)"></span>
                                     </a>
                                 </div>
 
@@ -286,8 +292,5 @@
     <script src="{{ asset('js/custom.js') }}"></script>
 
 </body>
-
-
-<!-- Mirrored from slimhamdi.net/tunis/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Nov 2022 07:06:31 GMT -->
 
 </html>
