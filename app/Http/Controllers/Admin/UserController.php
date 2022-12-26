@@ -3,7 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\StoreRequest;
+use App\Http\Requests\User\UpdateRequest;
+use App\Models\Info;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -14,7 +22,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::with('info')->latest()->get();
+
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -24,7 +34,25 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', User::class);
+
         return view('admin.users.create');
+    }
+
+    public function bulk_create()
+    {
+        $this->authorize('create', User::class);
+
+        return view('admin.users.bulk_create');
+    }
+
+    public function bulk_create_store(Request $request)
+    {
+        $this->authorize('create', User::class);
+
+        $status = User::factory()->count($request->total)->create();
+
+        return back()->with('success', 'Successfully Created!!!');
     }
 
     /**
@@ -33,9 +61,27 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $this->authorize('create', User::class);
+
+        $data = $request->validated();
+        DB::beginTransaction();
+
+        try {
+            User::create([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password'])
+            ]);
+            DB::commit();
+        } catch(Exception $e) {
+            DB::rollback();
+
+            return back()->with('error', 'Something Wrong!!!');
+        }
+
+        return back()->with('success', 'Successfully Created!!!');
     }
 
     /**
@@ -44,9 +90,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('admin.users.show');
     }
 
     /**
@@ -57,7 +103,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::with('info')->findOrFail($id);
+        $this->authorize('update', $user);
+
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -67,9 +116,33 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+
+        if (auth()->user()->role == 'admin') {
+            $user->update([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password'])
+            ]);
+
+            return back()->with('success', 'Account Updated!!!');
+        }
+
+        if (array_key_exists('current_password', $data) && Hash::check($data['current_password'], $user->password)) {
+            $user->update([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password'])
+            ]);
+        } else {
+            return back()->with('error', 'Password does not match!!!');
+        }
+
+        return back()->with('success', 'Account Updated!!!');
     }
 
     /**
@@ -80,6 +153,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $this->authorize('delete', $user);
+
+        $user->delete();
+
+        return back()->with('success', 'Successfully Deleted!!!');
     }
 }

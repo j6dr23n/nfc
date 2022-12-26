@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\InfoController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\UserController;
@@ -19,15 +21,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
-Route::middleware('auth')->group(function () {
+Route::get('/', [HomeController::class,'index'])->name('home.index');
+Route::get('/{username}', [HomeController::class,'show'])->name('home.show');
+Route::get('/blogs/show/{slug}', [HomeController::class,'blog_show'])->name('home.blog.show');
+Route::get('/blogs/index', [HomeController::class,'blog_index'])->name('home.blog.index');
+
+Route::prefix('moe')->middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
+    Route::get('/profile', [DashboardController::class,'profile'])->name('dashboard.profile');
+    Route::get('/bulk-create', [UserController::class,'bulk_create'])->name('users.bulk_create');
+    Route::post('/bulk-create-store', [UserController::class,'bulk_create_store'])->name('users.bulk_create_store');
+
     Route::resource('users', UserController::class);
+    Route::resource('infos', InfoController::class, ['as' => 'users']);
     Route::resource('skills', SkillController::class);
     Route::resource('socials', SocialController::class);
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('blogs', BlogController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Social\StoreRequest;
+use App\Http\Requests\Social\UpdateRequest;
+use App\Models\Social;
 
 class SocialController extends Controller
 {
@@ -14,7 +16,7 @@ class SocialController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.socials.index');
     }
 
     /**
@@ -24,7 +26,10 @@ class SocialController extends Controller
      */
     public function create()
     {
-        return view('admin.socials.create');
+        $icons = Social::whereNull('url')->get();
+        $this->authorize('create', Social::class);
+
+        return view('admin.socials.create', compact('icons'));
     }
 
     /**
@@ -33,9 +38,24 @@ class SocialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $this->authorize('create', Social::class);
+
+        $data = $request->validated();
+        foreach ($data['socials'] as $key => $value) {
+            if (array_key_exists('logo', $data['socials'][0])) {
+                $value['user_id'] = auth()->id();
+                Social::create($value);
+            } else {
+                $icon = Social::whereNull('url')->where('title', $value['title'])->firstOrFail();
+                $value['logo'] = $icon->logo;
+                $value['user_id'] = auth()->id();
+                Social::create($value);
+            }
+        }
+
+        return redirect(route('dashboard.profile'))->with('success', 'Successfully Created!!!');
     }
 
     /**
@@ -57,7 +77,12 @@ class SocialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $social = Social::findOrFail($id);
+        $this->authorize('update', $social);
+
+        $icons = Social::whereNull('url')->get();
+
+        return view('admin.socials.edit', compact('social', 'icons'));
     }
 
     /**
@@ -67,9 +92,20 @@ class SocialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        $social = Social::findOrFail($id);
+        $this->authorize('update', $social);
+
+        $data = $request->validated();
+        if (array_key_exists('logo', $data) === null) {
+            $icon = Social::whereNull('url')->where('title', $data['title'])->firstOrFail();
+            $data['logo'] = $icon->logo;
+        }
+
+        $social->fill($data)->save();
+
+        return redirect(route('dashboard.profile'))->with('success', 'Updated!!!');
     }
 
     /**
@@ -80,6 +116,11 @@ class SocialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $social = Social::findOrFail($id);
+        $this->authorize('delete', $social);
+
+        $social->delete();
+
+        return back()->with('success', 'Skill deleted!!!');
     }
 }

@@ -3,10 +3,10 @@
     <div class=" main-container container-fluid">
         <div class="main-header-left ">
             <div class="responsive-logo">
-                <a href="index.html" class="header-logo">
-                    <img src="{{ asset('assets/img/brand/logo.png') }}" class="mobile-logo logo-1" alt="logo">
-                    <img src="{{ asset('assets/img/brand/logo-white.png') }}" class="mobile-logo dark-logo-1"
+                <a href="{{ route('dashboard.index') }}" class="header-logo">
+                    <img src="{{ asset('admin/assets/img/brand/mobile-logo.png') }}" class="mobile-logo logo-1"
                         alt="logo">
+                    <img src="{{ asset('assets/img/logo-white.png') }}" class="mobile-logo dark-logo-1" alt="logo">
                 </a>
             </div>
             <div class="app-sidebar__toggle" data-bs-toggle="sidebar">
@@ -14,8 +14,9 @@
                 <a class="close-toggle" href="javascript:void(0);"><i class="header-icon fe fe-x"></i></a>
             </div>
             <div class="logo-horizontal">
-                <a href="index.html" class="header-logo">
-                    <img src="{{ asset('assets/img/brand/logo.png') }}" class="mobile-logo logo-1" alt="logo">
+                <a href="{{ route('dashboard.index') }}" class="header-logo">
+                    <img src="{{ asset('admin/assets/img/brand/mobile-logo.png') }}" class="mobile-logo logo-1"
+                        alt="logo">
                     <img src="{{ asset('assets/img/brand/logo-white.png') }}" class="mobile-logo dark-logo-1"
                         alt="logo">
                 </a>
@@ -50,31 +51,28 @@
                         </li>
                         <li class="dropdown main-profile-menu nav nav-item nav-link ps-lg-2">
                             <a class="new nav-link profile-user d-flex" href="#" data-bs-toggle="dropdown"><img
-                                    alt="" src="{{ asset('assets/img/faces/2.jpg') }}" class=""></a>
+                                    alt=""
+                                    src="{{ auth()->user()->info !== null ? env('APP_URL') . '/storage/' . auth()->user()->info->image : asset('img/demo.png') }}"
+                                    class=""></a>
                             <div class="dropdown-menu">
                                 <div class="menu-header-content p-3 border-bottom">
                                     <div class="d-flex wd-100p">
                                         <div class="main-img-user"><img alt=""
-                                                src="{{ asset('assets/img/faces/2.jpg') }}" class=""></div>
+                                                src="{{ auth()->user()->info !== null ? env('APP_URL') . '/storage/' . auth()->user()->info->image : asset('img/demo.png') }}"
+                                                class=""></div>
                                         <div class="ms-3 my-auto">
-                                            <h6 class="tx-15 font-weight-semibold mb-0">Teri Dactyl</h6>
-                                            <span class="dropdown-title-text subtext op-6  tx-12">Premium
-                                                Member</span>
+                                            <h6 class="tx-15 font-weight-semibold mb-0">{{ auth()->user()->username }}
+                                            </h6>
+                                            <span
+                                                class="dropdown-title-text subtext op-6  tx-12">{{ ucfirst(auth()->user()->role) }}</span>
                                         </div>
                                     </div>
                                 </div>
-                                <a class="dropdown-item" href="profile.html"><i
+                                <a class="dropdown-item" href="{{ route('dashboard.profile') }}"><i
                                         class="far fa-user-circle"></i>Profile</a>
-                                <a class="dropdown-item" href="chat.html"><i class="far fa-smile"></i>
-                                    chat</a>
-                                <a class="dropdown-item" href="mail-read.html"><i class="far fa-envelope "></i>Inbox</a>
-                                <a class="dropdown-item" href="mail.html"><i
-                                        class="far fa-comment-dots"></i>Messages</a>
-                                <a class="dropdown-item" href="mail-settings.html"><i class="far fa-sun"></i>
-                                    Settings</a>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
-                                    <a class="dropdown-item"
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                     this.closest('form').submit();"><i
                                             class="far fa-arrow-alt-circle-left"></i>

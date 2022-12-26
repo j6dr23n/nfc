@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Skill\StoreRequest;
+use App\Http\Requests\Skill\UpdateRequest;
+use App\Models\Skill;
+use App\Models\Social;
 
 class SkillController extends Controller
 {
@@ -14,7 +17,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.skills.index');
     }
 
     /**
@@ -24,7 +27,10 @@ class SkillController extends Controller
      */
     public function create()
     {
-        return view('admin.skills.create');
+        $this->authorize('create', Skill::class);
+        $icons = Social::whereNull('url')->get();
+
+        return view('admin.skills.create', compact('icons'));
     }
 
     /**
@@ -33,9 +39,18 @@ class SkillController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $this->authorize('create', Skill::class);
+
+        $data = $request->validated();
+
+        foreach ($data['skills'] as $key => $value) {
+            $value['user_id'] = auth()->id();
+            Skill::create($value);
+        }
+
+        return redirect(route('dashboard.profile'))->with('success', 'Successfully Created!!!');
     }
 
     /**
@@ -57,7 +72,10 @@ class SkillController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skill = Skill::findOrFail($id);
+        $this->authorize('update', $skill);
+
+        return view('admin.skills.edit', compact('skill'));
     }
 
     /**
@@ -67,9 +85,15 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $skill = Skill::findOrFail($id);
+        $this->authorize('update', $skill);
+
+        $skill->fill($data)->save();
+
+        return redirect(route('dashboard.profile'))->with('success', 'Updated!!!');
     }
 
     /**
@@ -80,6 +104,11 @@ class SkillController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skill = Skill::findOrFail($id);
+        $this->authorize('delete', $skill);
+
+        $skill->delete();
+
+        return back()->with('success', 'Skill deleted!!!');
     }
 }

@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Description" content="Nowa – Laravel Bootstrap 5 Admin & Dashboard Template">
-    <meta name="Author" content="Spruko Technologies Private Limited">
-    <meta name="Keywords"
-        content="admin dashboard, admin dashboard laravel, admin panel template, blade template, blade template laravel, bootstrap template, dashboard laravel, laravel admin, laravel admin dashboard, laravel admin panel, laravel admin template, laravel bootstrap admin template, laravel bootstrap template, laravel template" />
+    <meta name="Description" content="NFC Card Website ">
+    <meta name="Author" content="Moe Card MM">
+    <meta name="Keywords" content="nfc,nfc card,moe card mm,moe card,moe,myanmar,nfc myanmar card" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Title -->
-    <title> Nowa – Laravel Bootstrap 5 Admin & Dashboard Template </title>
+    <title>Moe Card MM</title>
 
     <!-- FAVICON -->
     <link rel="icon" href="{{ asset('admin/assets/img/brand/favicon.png') }}" type="image/x-icon" />
@@ -56,11 +56,15 @@
     <link href="{{ asset('admin/assets/switcher/css/switcher.css') }}" rel="stylesheet" />
     <link href="{{ asset('admin/assets/switcher/demo.css') }}" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
+    @yield('external-css')
 </head>
 
 <body class="ltr main-body app sidebar-mini">
-
-    <x-admin.partials.switcher></x-admin.partials.switcher>
 
     <x-admin.partials.loader></x-admin.partials.loader>
 
@@ -168,11 +172,9 @@
     <!-- exported JS -->
     <script src="{{ asset('admin/assets/js/exported.js') }}"></script>
 
-    <!-- SWITCHER JS -->
-    <script src="{{ asset('admin/assets/switcher/js/switcher.js') }}"></script>
-
     <script src="{{ asset('admin/assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/rangeslider.js') }}"></script>
+    @yield('scripts')
 </body>
 
 </html>

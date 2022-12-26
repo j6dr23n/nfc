@@ -19,8 +19,8 @@ return new class () extends Migration {
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->string('full_name')->nullable();
-            $table->integer('age')->nullable();
-            $table->bigInteger('ph_number')->nullable();
+            $table->date('age')->nullable();
+            $table->string('ph_number')->nullable();
             $table->text('address')->nullable();
             $table->text('qrcode_path')->nullable();
             $table->text('logo_path')->nullable();

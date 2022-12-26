@@ -56,15 +56,13 @@
                                     <div class="col-8">
                                         <div class="ps-4 pt-4 pe-3 pb-4">
                                             <div class="">
-                                                <h6 class="mb-2 tx-12">Today Earnings</h6>
+                                                <h6 class="mb-2 tx-12">Total Skills</h6>
                                             </div>
                                             <div class="pb-0 mt-0">
                                                 <div class="d-flex">
-                                                    <h4 class="tx-20 font-weight-semibold mb-2">$47,589</h4>
+                                                    <h4 class="tx-20 font-weight-semibold mb-2">47</h4>
                                                 </div>
-                                                <p class="mb-0 tx-12 text-muted">Last week<i
-                                                        class="fa fa-caret-down mx-2 text-danger"></i>
-                                                    <span class="font-weight-semibold text-danger"> -453</span>
+                                                <p class="mb-0 tx-12 text-muted">Lifetime
                                                 </p>
                                             </div>
                                         </div>
@@ -84,15 +82,13 @@
                                     <div class="col-8">
                                         <div class="ps-4 pt-4 pe-3 pb-4">
                                             <div class="">
-                                                <h6 class="mb-2 tx-12">Profit Gain</h6>
+                                                <h6 class="mb-2 tx-12">Total Social</h6>
                                             </div>
                                             <div class="pb-0 mt-0">
                                                 <div class="d-flex">
-                                                    <h4 class="tx-20 font-weight-semibold mb-2">$8,943</h4>
+                                                    <h4 class="tx-20 font-weight-semibold mb-2">123</h4>
                                                 </div>
-                                                <p class="mb-0 tx-12 text-muted">Last week<i
-                                                        class="fa fa-caret-up mx-2 text-success"></i>
-                                                    <span class=" text-success font-weight-semibold"> +788</span>
+                                                <p class="mb-0 tx-12 text-muted">Lifetime
                                                 </p>
                                             </div>
                                         </div>
@@ -112,15 +108,13 @@
                                     <div class="col-8">
                                         <div class="ps-4 pt-4 pe-3 pb-4">
                                             <div class="">
-                                                <h6 class="mb-2 tx-12">Total Earnings</h6>
+                                                <h6 class="mb-2 tx-12">Total View</h6>
                                             </div>
                                             <div class="pb-0 mt-0">
                                                 <div class="d-flex">
-                                                    <h4 class="tx-22 font-weight-semibold mb-2">$57.12M</h4>
+                                                    <h4 class="tx-22 font-weight-semibold mb-2">12333</h4>
                                                 </div>
-                                                <p class="mb-0 tx-12  text-muted">Last week<i
-                                                        class="fa fa-caret-down mx-2 text-danger"></i>
-                                                    <span class="text-danger font-weight-semibold"> -693</span>
+                                                <p class="mb-0 tx-12 text-muted">Lifetime
                                                 </p>
                                             </div>
                                         </div>
