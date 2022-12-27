@@ -35,32 +35,32 @@
         <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
             <li class="icon-box active">
                 <i class="fa fa-home"></i>
-                <a href="#home">
+                <a href="{{ route('home.index') }}">
                     <h2>Home</h2>
                 </a>
             </li>
             <li class="icon-box active">
-                <i class="fa fa-info-circle"></i>
-                <a href="#info">
-                    <h2>Information</h2>
+                <i class="fa fa-blog"></i>
+                <a href="{{ route('home.blog.index') }}">
+                    <h2>Blogs</h2>
+                </a>
+            </li>
+            <li class="icon-box">
+                <i class="fa fa-key"></i>
+                <a href="{{ route('login') }}">
+                    <h2>Login</h2>
                 </a>
             </li>
             <li class="icon-box">
                 <i class="fa fa-hashtag"></i>
-                <a href="#socials">
-                    <h2>Socials</h2>
+                <a href="#info">
+                    <h2>Information</h2>
                 </a>
             </li>
             <li class="icon-box">
                 <i class="fa fa-bolt"></i>
                 <a href="#skills">
                     <h2>Skills</h2>
-                </a>
-            </li>
-            <li class="icon-box">
-                <i class="fa fa-comments"></i>
-                <a href="#blogs">
-                    <h2>Blog</h2>
                 </a>
             </li>
         </ul>

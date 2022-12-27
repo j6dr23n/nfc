@@ -14,7 +14,6 @@
                 <div class="justify-content-center mt-2">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item tx-15"><a href="javascript:void(0);">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Sales</li>
                     </ol>
                 </div>
             </div>
@@ -332,4 +331,19 @@
         <!-- Container closed -->
     </div>
     <!-- main-content closed -->
+    @section('scripts')
+        @include('partials/_delete-script')
+        <script>
+            function copyToClipboard(id) {
+                // Get the text field
+                var copyText = document.getElementById(id);
+
+                // Select the text field
+                copyText.select();
+
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(copyText.value);
+            }
+        </script>
+    @endsection
 </x-admin.layout>

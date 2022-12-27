@@ -39,7 +39,7 @@
                                     <img src="{{ str_contains($blog->author->info->image, 'https://via.placeholder.com/') ? $blog->author->info->image : env('APP_URL') . '/storage/' . $blog->author->info->image }}"
                                         class="avatar brround avatar-md me-3" alt="avatar-img">
                                     <div>
-                                        <a href="profile.html"
+                                        <a href="{{ env('APP_URL') . '/' . $blog->author->username }}"
                                             class="text-default font-weight-bold">{{ $blog->author->username }}</a>
                                         <small
                                             class="d-block text-muted">{{ $blog->created_at->diffForHumans() }}</small>
@@ -77,7 +77,8 @@
                         </div>
                         <div class="card-body">
                             <div class="text-center">
-                                <a href="blog-details.html"><img class="card-img-top w-100 w-100"
+                                <a href="{{ env('APP_URL') . '/' . $blog->author->username }}"><img
+                                        class="card-img-top w-100 w-100"
                                         src="{{ str_contains($blog->author->info->image, 'https://via.placeholder.com/') ? $blog->author->info->image : env('APP_URL') . '/storage/' . $blog->author->info->image }}"
                                         alt=""></a>
                                 <div class="br-5 p-2 text-justify">

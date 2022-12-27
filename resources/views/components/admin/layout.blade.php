@@ -64,7 +64,7 @@
     @yield('external-css')
 </head>
 
-<body class="ltr main-body app sidebar-mini">
+<body class="ltr main-body app sidebar-mini dark-theme">
 
     <x-admin.partials.loader></x-admin.partials.loader>
 

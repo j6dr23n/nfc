@@ -2,6 +2,10 @@
     <!-- main-content -->
     <div class="main-content app-content">
 
+        <div class="text-center mt-4">
+            <h3>EDIT PROFILE</h3>
+        </div>
+
         <!-- container -->
         <div class="main-container container-fluid mt-4">
             <div class="row">
@@ -67,7 +71,7 @@
                             @foreach ($errors->all() as $message)
                                 <p style="color:red;">{{ $message }}</p>
                             @endforeach
-                            <div class="main-content-body tab-pane  active" id="about">
+                            <div class="main-content-body tab-pane active" id="about">
                                 <div class="card">
                                     <div class="card-body p-0 border-0 p-0 rounded-10">
                                         <div class="p-4">
@@ -692,7 +696,7 @@
     @section('scripts')
         <script src="{{ asset('admin/assets/plugins/jquery.maskedinput/jquery.maskedinput.js') }}"></script>
         <script>
-            $("#phoneMask").mask("(+99) 999-999-9999");
+            $("#phoneMask").mask("(+959) 999-999-999");
         </script>
     @endsection
 </x-admin.layout>

@@ -4,10 +4,11 @@
         <div class="main-sidebar-header active">
             <a class="header-logo active" href="{{ route('dashboard.index') }}">
                 <img src="{{ asset('admin/assets/img/brand/logo.png') }}" class="main-logo  desktop-logo" alt="logo">
-                <img src="{{ asset('assets/img/brand/logo-white.png') }}" class="main-logo  desktop-dark" alt="logo">
+                <img src="{{ asset('admin/assets/img/brand/mobile-logo.png') }}" class="main-logo  desktop-dark"
+                    alt="logo">
                 <img src="{{ asset('admin/assets/img/brand/favicon.png') }}" class="main-logo  mobile-logo"
                     alt="logo">
-                <img src="{{ asset('assets/img/brand/favicon-white.png') }}" class="main-logo  mobile-dark"
+                <img src="{{ asset('admin/assets/img/brand/mobile-logo.png') }}" class="main-logo  mobile-dark"
                     alt="logo">
             </a>
         </div>

@@ -45,7 +45,8 @@
                                 </textarea>
                                 <div class="form-group mt-3">
                                     <label class="ckbox">
-                                        <input type="checkbox" name="published" value="1"><span>Published</span>
+                                        <input type="checkbox" name="published" value="1"
+                                            checked><span>Published</span>
                                     </label>
                                 </div>
                             </div>
