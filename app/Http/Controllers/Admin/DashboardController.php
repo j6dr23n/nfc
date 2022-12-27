@@ -14,8 +14,14 @@ class DashboardController extends Controller
     public function index()
     {
         if (auth()->user()->role === 'admin') {
-            return view('admin.dashboard');
+            $users = User::get();
+            $blogs = Blog::with('author')->get();
+            $skills = Skill::get();
+            $socials = Social::get();
+
+            return view('admin.dashboard', compact('users', 'blogs', 'skills', 'socials'));
         }
+
         return redirect(route('dashboard.profile'));
     }
     public function profile()
