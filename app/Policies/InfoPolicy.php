@@ -60,7 +60,7 @@ class InfoPolicy
      */
     public function update(User $user, Info $info)
     {
-        //
+        return $user->id === $info->user_id;
     }
 
     /**
@@ -72,7 +72,7 @@ class InfoPolicy
      */
     public function delete(User $user, Info $info)
     {
-        //
+        return $user->id === $info->user_id;
     }
 
     /**

@@ -213,7 +213,6 @@
                 <section
                     class="main-content revealator-slideup revealator-once revealator-delay1 no-transform revealator-partially-below"
                     id="blogs">
-                    <div class="container">
                         <!-- Articles Starts -->
                         <div class="row">
                             @foreach ($blogs as $item)
@@ -245,7 +244,6 @@
                             {{ $blogs->links('vendor/pagination/frontend') }}
                         </div>
                         <!-- Articles Ends -->
-                    </div>
 
                 </section>
             @endif
