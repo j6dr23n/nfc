@@ -5,13 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreRequest;
 use App\Http\Requests\User\UpdateRequest;
-use App\Models\Info;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -118,15 +116,26 @@ class UserController extends Controller
      */
     public function update(UpdateRequest $request, $id)
     {
-        $data = $request->validated();
+        $data = $request->validate([
+            'username' => 'required|string',
+            'email' => 'required|email',
+        ]);
+
+        if ($request->password !== null) {
+            $data = $request->validate([
+                'username' => 'required|string',
+                'email' => 'required|email',
+                'current_password' => 'nullable|min:6',
+                'password' => 'nullable|confirmed|min:6',
+            ]);
+        }
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
 
-        if (auth()->user()->role == 'admin') {
+        if (! array_key_exists('current_password', $data)) {
             $user->update([
                 'username' => $data['username'],
                 'email' => $data['email'],
-                'password' => bcrypt($data['password'])
             ]);
 
             return back()->with('success', 'Account Updated!!!');

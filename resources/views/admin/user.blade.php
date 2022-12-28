@@ -562,7 +562,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group ">
+                                            <div class="form-group">
                                                 <div class="row row-sm">
                                                     <div class="col-md-3">
                                                         <label class="form-label">Email</label>
@@ -571,6 +571,9 @@
                                                         <input type="email" class="form-control"
                                                             placeholder="Email Address" name="email"
                                                             value="{{ $user->email }}">
+                                                        <button type="submit" class="btn btn-warning my-2 float-end">
+                                                            Save
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -613,7 +616,7 @@
                                                 <div class="row row-sm">
                                                     <div class="col-md-12">
                                                         <button type="submit" class="btn btn-success">
-                                                            Update Now
+                                                            Update
                                                         </button>
                                                     </div>
                                                 </div>

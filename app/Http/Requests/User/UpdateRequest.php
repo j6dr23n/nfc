@@ -23,11 +23,18 @@ class UpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'username' => 'required|string',
-            'email' => 'required|email',
-            'current_password' => 'nullable|min:6',
-            'password' => 'required|confirmed|min:6',
-        ];
+        if ($this->password !== null) {
+            return [
+                'username' => 'required|string',
+                'email' => 'required|email',
+                'current_password' => 'nullable|min:6',
+                'password' => 'nullable|confirmed|min:6',
+            ];
+        } else {
+            return [
+                'username' => 'required|string',
+                'email' => 'required|email',
+            ];
+        }
     }
 }
