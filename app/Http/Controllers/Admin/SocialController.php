@@ -44,7 +44,7 @@ class SocialController extends Controller
 
         $data = $request->validated();
         foreach ($data['socials'] as $key => $value) {
-            if (array_key_exists('logo', $data['socials'][0])) {
+            if (array_key_exists('logo', $value)) {
                 $value['user_id'] = auth()->id();
                 Social::create($value);
             } else {

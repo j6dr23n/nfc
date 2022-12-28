@@ -74,7 +74,7 @@
                         </div>
                         @if (count($user->socials) > 0)
                             <!-- Left Side Starts -->
-                            <div class="col-12 col-lg-12 col-md-12 col-sm-12" id="socials">
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-4" id="socials">
                                 <div class="row">
                                     <div class="col-12">
                                         <h3 class="text-uppercase custom-title mb-0 ft-wt-600 text-center">Social Media

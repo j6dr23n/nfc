@@ -62,7 +62,7 @@ class User extends Authenticatable
 
     public function socials()
     {
-        return $this->hasMany(Social::class);
+        return $this->hasMany(Social::class)->whereNotNull('url');
     }
 
     public function skills()

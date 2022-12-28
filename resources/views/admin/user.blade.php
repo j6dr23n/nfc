@@ -643,7 +643,9 @@
     @section('scripts')
         <script src="{{ asset('admin/assets/plugins/jquery.maskedinput/jquery.maskedinput.js') }}"></script>
         <script>
-            $("#phoneMask").mask("(+959) 999-999-999");
+            $.mask.definitions['9'] = '';
+            $.mask.definitions['d'] = '[0-9]';
+            $("#phoneMask").mask("(+959) ddd-ddd-ddd");
         </script>
     @endsection
 </x-admin.layout>

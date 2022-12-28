@@ -84,6 +84,10 @@
         <!-- Mobile Menu Ends -->
     </header>
     <!-- Header Ends -->
+    <section
+        class="title-section-home d-sm-none text-left text-sm-center revealator-slideup revealator-once revealator-delay1 no-transform revealator-partially-above revealator-within">
+        <h3>MOE <span>Card</span></h3>
+    </section>
     {{ $slot }}
     <!-- Template JS Files -->
     <script src="{{ asset('js/jquery-3.5.0.min.js') }}"></script>
