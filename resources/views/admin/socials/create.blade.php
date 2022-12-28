@@ -56,9 +56,10 @@
                                     <div class="tabs-menu1">
                                         <!-- Tabs -->
                                         <ul class="nav panel-tabs main-nav-line">
-                                            <li><a href="#tab4" class="nav-link active" data-bs-toggle="tab">Admin
+                                            <li><a href="#tab4" class="nav-link active" data-bs-toggle="tab">New
                                                     Socials</a></li>
-                                            <li><a href="#tab5" class="nav-link" data-bs-toggle="tab">Socials</a>
+                                            <li><a href="#tab5" class="nav-link" data-bs-toggle="tab">Admin
+                                                    Socials</a>
                                             </li>
                                         </ul>
                                     </div>
