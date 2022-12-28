@@ -60,7 +60,7 @@
                                     @foreach ($ph_numbers as $item)
                                         <a href="tel:{{ $item }}"
                                             class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $item }}
-                                            , </a>
+                                        </a>
                                     @endforeach
                                 </li>
                             </ul>

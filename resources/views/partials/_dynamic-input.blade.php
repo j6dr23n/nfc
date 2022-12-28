@@ -10,13 +10,13 @@
         <div class="input-group mb-3">
             <input aria-describedby="basic-addon2"
                 aria-label="Phone Number" class="form-control phoneMask"
-                placeholder="(+95) 000-000-0000" name="ph_numbers[` +
+                placeholder="(+959) 000-000-0000" name="ph_numbers[` +
             i + `]" type="tel" id="phoneMask">
             <span class="input-group-text remove_ph_number"
                 id="basic-addon2"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span>
         </div>
     </div>`);
-        $(".phoneMask").mask("(+999) 999-999-999");
+        $(".phoneMask").mask("(+959) 999-999-999");
     });
     $(document).on('click', '.remove_ph_number', function() {
         $(this).parent('div').remove();

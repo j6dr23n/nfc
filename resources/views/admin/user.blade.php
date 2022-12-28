@@ -39,10 +39,6 @@
                                             class="fa fa-envelope me-2"></i></span><span
                                         class="font-weight-semibold me-2">Email:</span><span>{{ $user->email }}</span>
                                 </p>
-                                <p class="text-muted ms-md-4 ms-0 mb-2"><span><i
-                                            class="fa fa-globe me-2"></i></span><span
-                                        class="font-weight-semibold me-2">Website</span><span>{{ $user->info->website ?? 'demo.com' }}</span>
-                                </p>
                             </div>
                         </div>
                         <div class="card-footer py-0">
@@ -91,58 +87,6 @@
                                                     <li class="border p-2 br-5 bg-light wd-100 ht-70"><span
                                                             class="border-0 mb-0 pb-0">113</span>Views</li>
                                                 </ul>
-                                            </div>
-                                        </div>
-                                        <div class="border-top"></div>
-                                        <div class="p-4">
-                                            <label class="main-content-label tx-13 mg-b-20">Social</label>
-                                            <div class="d-lg-flex">
-                                                <div class="mg-md-r-20 mg-b-10">
-                                                    <div class="main-profile-social-list">
-                                                        <div class="media">
-                                                            <div class="media-icon bg-primary-transparent text-primary">
-                                                                <i class="icon ion-logo-github"></i>
-                                                            </div>
-                                                            <div class="media-body"> <span>Github</span> <a
-                                                                    href="#">github.com/spruko</a> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mg-md-r-20 mg-b-10">
-                                                    <div class="main-profile-social-list">
-                                                        <div class="media">
-                                                            <div class="media-icon bg-success-transparent text-success">
-                                                                <i class="icon ion-logo-twitter"></i>
-                                                            </div>
-                                                            <div class="media-body"> <span>Twitter</span> <a
-                                                                    href="#">twitter.com/spruko.me</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mg-md-r-20 mg-b-10">
-                                                    <div class="main-profile-social-list">
-                                                        <div class="media">
-                                                            <div class="media-icon bg-info-transparent text-info">
-                                                                <i class="icon ion-logo-linkedin"></i>
-                                                            </div>
-                                                            <div class="media-body"> <span>Linkedin</span> <a
-                                                                    href="#">linkedin.com/in/spruko</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mg-md-r-20 mg-b-10">
-                                                    <div class="main-profile-social-list">
-                                                        <div class="media">
-                                                            <div class="media-icon bg-danger-transparent text-danger">
-                                                                <i class="icon ion-md-link"></i>
-                                                            </div>
-                                                            <div class="media-body"> <span>My Portfolio</span> <a
-                                                                    href="#">spruko.com/</a> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -235,7 +179,7 @@
                                                                 <div class="input-group mb-3">
                                                                     <input aria-describedby="basic-addon2"
                                                                         aria-label="Phone Number" class="form-control"
-                                                                        placeholder="(+95) 000-000-0000"
+                                                                        placeholder="(+959) 000-000-0000"
                                                                         name="ph_numbers[{{ $key }}]"
                                                                         type="tel" id="phoneMask"
                                                                         value="{{ $item }}">
