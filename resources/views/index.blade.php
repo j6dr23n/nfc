@@ -39,28 +39,31 @@
                         <div class="col-12">
                             <h3 class="text-uppercase custom-title mb-0 ft-wt-600 text-center">personal infos</h3>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-sm-12">
                             <ul class="about-list list-unstyled open-sans-font">
                                 <li> <span class="title">full name :</span> <span
-                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info->full_name ?? 'Demo' }}</span>
+                                        class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info->full_name ?? 'Demo' }}</span>
                                 </li>
-                                <li> <span class="title">Age :</span> <span
-                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info !== null ? date_diff(date_create($user->info->age), date_create('now'))->y : '18' }}
-                                        Years</span>
+                                <li> <span class="title">Year :</span> <span
+                                        class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info !== null ? Carbon\Carbon::parse($user->info->age)->format('j F, Y') : '18' }}</span>
                                 </li>
 
                             </ul>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-sm-12">
                             <ul class="about-list list-unstyled open-sans-font">
                                 <li> <span class="title">Email :</span> <a href="mailto:{{ $user->email }}"
-                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block text-white">{{ $user->email }}</a>
+                                        class="value d-sm-inline-block d-lg-block d-xl-inline-block text-white">{{ $user->email }}</a>
                                 </li>
                                 <li> <span class="title">phone :</span>
                                     @foreach ($ph_numbers as $item)
                                         <a href="tel:{{ $item }}"
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $item }}
+                                            class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $item }}
+
                                         </a>
+                                        @if (!$loop->last)
+                                            ,
+                                        @endif
                                     @endforeach
                                 </li>
                             </ul>
@@ -68,7 +71,7 @@
                         <div class="col-12">
                             <ul class="about-list list-unstyled open-sans-font">
                                 <li> <span class="title">Address</span> <span
-                                        class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info->address ?? 'demo' }}</span>
+                                        class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info->address ?? 'demo' }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -101,7 +104,7 @@
                 <div class="col-12">
                     <h3
                         class="text-uppercase text-center pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">
-                        My Skills</h3>
+                        Skills</h3>
                 </div>
                 @forelse ($user->skills as $item)
                     <div class="col-6 col-md-3 mb-3 mb-sm-5">
@@ -215,7 +218,7 @@
                         My Blogs</h3>
                 </div>
                 <section
-                    class="main-content revealator-slideup revealator-once revealator-delay1 no-transform revealator-partially-below"
+                    class="revealator-slideup revealator-once revealator-delay1 no-transform revealator-partially-below"
                     id="blogs">
                     <!-- Articles Starts -->
                     <div class="row">
@@ -237,7 +240,7 @@
                                             </h3>
                                         </div>
                                         <div class="entry-content open-sans-font">
-                                            <p>{{ Str::limit($item->content, 150) }}
+                                            <p>{{ Str::limit(strip_tags($item->content), 150) }}
                                             </p>
                                         </div>
                                     </div>
