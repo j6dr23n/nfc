@@ -39,21 +39,20 @@
                         <div class="col-12">
                             <h3 class="text-uppercase custom-title mb-0 ft-wt-600 text-center">personal infos</h3>
                         </div>
-                        <div class="col-lg-6 col-sm-12">
+                        <div class="col-sm-6 col-xs-12">
                             <ul class="about-list list-unstyled open-sans-font">
                                 <li> <span class="title">full name :</span> <span
                                         class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info->full_name ?? 'Demo' }}</span>
                                 </li>
-                                <li> <span class="title">Year :</span> <span
-                                        class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info !== null ? Carbon\Carbon::parse($user->info->age)->format('j F, Y') : '18' }}</span>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="col-lg-6 col-sm-12">
-                            <ul class="about-list list-unstyled open-sans-font">
                                 <li> <span class="title">Email :</span> <a href="mailto:{{ $user->email }}"
                                         class="value d-sm-inline-block d-lg-block d-xl-inline-block text-white">{{ $user->email }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <ul class="about-list list-unstyled open-sans-font">
+                                <li> <span class="title">Year :</span> <span
+                                        class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info !== null ? Carbon\Carbon::parse($user->info->age)->format('j / F / Y') : '18' }}</span>
                                 </li>
                                 <li> <span class="title">phone :</span>
                                     @foreach ($ph_numbers as $item)
@@ -66,11 +65,12 @@
                                         @endif
                                     @endforeach
                                 </li>
+
                             </ul>
                         </div>
                         <div class="col-12">
                             <ul class="about-list list-unstyled open-sans-font">
-                                <li> <span class="title">Address</span> <span
+                                <li> <span class="title">Address :</span> <span
                                         class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $user->info->address ?? 'demo' }}</span>
                                 </li>
                             </ul>
