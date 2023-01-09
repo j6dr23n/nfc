@@ -56,13 +56,22 @@
                                 </li>
                                 <li> <span class="title">phone :</span>
                                     @foreach ($ph_numbers as $item)
+                                        @if ($loop->first)
+                                            <a href="tel:{{ $item }}" class="value d-inline-block"
+                                                style="margin-left: 6px;">{{ $item }}
+                                            </a>
+                                            @if (!$loop->last)
+                                                <span class="d-xs-none">,</span>
+                                            @endif
+                                            <br class="d-md-none">
+                                        @endif
                                         <a href="tel:{{ $item }}"
-                                            class="value d-sm-inline-block d-lg-block d-xl-inline-block">{{ $item }}
-
+                                            class="value d-inline-block ph_number">{{ $item }}
                                         </a>
                                         @if (!$loop->last)
-                                            ,
+                                            <span class="d-xs-none">,</span>
                                         @endif
+                                        <br class="d-md-none">
                                     @endforeach
                                 </li>
 
